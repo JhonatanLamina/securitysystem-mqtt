@@ -1,6 +1,6 @@
 //S.O.S Alert Sent
 function sos() {
-  var a = confirm("¿Seguro que desea reportar una emergencia?");
+  var a = confirm("Are you sure you want to report an emergency?");
   if( a == true ){
     console.log("S.O.S Alert Sent");
     message = new Paho.MQTT.Message("SOS");
@@ -8,13 +8,6 @@ function sos() {
     client.send(message);
     document.getElementById("state").innerHTML="S.O.S Alert Sent";
     return true;
-  }
-}
-//Authorized user
-function authentication(){
-  var password=prompt("Please enter your password to view this page!","");
-  if (password!="admin18"){
-    window.location="/403";
   }
 }
 //Create a client instance
