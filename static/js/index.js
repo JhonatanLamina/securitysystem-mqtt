@@ -35,8 +35,17 @@ function onConnect() {
   client.send(message);
 }
 function doFail(e){
+  alert("A connection error has occurred. Try again later.")
   console.log(e);
-  document.getElementById("state").innerHTML=e;
+  document.getElementById("imagen").src="/static/images/error.png";
+  document.getElementById("state").innerHTML="Failed Connection";
+  document.getElementById("t4").remove();
+  document.getElementById("t5").remove();
+  document.getElementById("myline1").remove();
+  document.getElementById("myline2").remove();
+  document.getElementById("sensor1").remove();
+  document.getElementById("sensor2").remove();
+  document.getElementById("sos").remove();
 }
 //Called when the client loses its connection
 function onConnectionLost(responseObject) {
@@ -48,7 +57,7 @@ function onConnectionLost(responseObject) {
 function onMessageArrived(message) {
   console.log("New data received:"+message.payloadString);
   //document.getElementById("sensor").innerHTML=message.payloadString;
-  var data = message.payloadString.split("|")
+  var data = message.payloadString.split("|");
   if (data[0] != 'none'){
     document.getElementById("state").innerHTML=data[0];
   }

@@ -53,6 +53,13 @@
 	font-family: Helvetica;
 	font-weight: bold;
 	text-align: center;
+	font-size: 30px;
+	color: #063d6d;
+}
+#t5{
+	font-family: Helvetica;
+	font-weight: bold;
+	text-align: center;
 	font-size: 25px;
 	color: red;
 }
