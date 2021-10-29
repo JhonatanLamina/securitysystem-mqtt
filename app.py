@@ -13,7 +13,8 @@ app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 def index():
     if request.authorization and request.authorization.username == "instalador" and request.authorization.password == "jl@1234":
         return render_template("index.html")
-    return make_response(render_template("error.html"), 401, {'WWW-Authenticate' : 'Basic realm="Login Required"'})
+    else:
+        return make_response(render_template("error.html"), 401, {'WWW-Authenticate' : 'Basic realm="Login Required"'})
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=PORT_NUMBER, debug = True)
