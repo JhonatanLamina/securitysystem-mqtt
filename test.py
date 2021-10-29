@@ -8,7 +8,7 @@ def connected(client, userdata, flags, rc):
 
 def message (client, userdata, msg):
     #print (msg.topic + " " + str (msg.payload))
-    print('Received: '+msg.payload.decode('utf-8'))
+    print('New data received: '+msg.payload.decode('utf-8'))
 
 client = mqtt.Client ()
 client.username_pw_set ('web.jhonatanlamina@gmail.com' , 'jhonatanlamina')

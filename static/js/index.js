@@ -2,12 +2,11 @@
 function sos() {
   var a = confirm("Are you sure you want to report an emergency?");
   if( a == true ){
-    console.log("S.O.S Alert Sent");
+    console.log("Send: SOS");
     message = new Paho.MQTT.Message("SOS");
     message.destinationName = "web.jhonatanlamina@gmail.com/t1";
     client.send(message);
     document.getElementById("state").innerHTML="S.O.S Alert Sent";
-    return true;
   }
 }
 //Create a client instance
