@@ -4,7 +4,7 @@ import base64
 from urllib.parse import unquote
 import os
 
-PORT_NUMBER = int(os.environ.get("PORT", 5000))    
+PORT_NUMBER = int(os.environ.get("PORT", 5000))
 
 app = Flask(__name__)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
